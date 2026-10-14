@@ -1,0 +1,44 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:'VT323',monospace;font-size:20px;background:#fff1e6 repeating-linear-gradient(45deg,#fde4ea 0 10px,#fff1e6 10px 20px);color:#5a3a3a}
+#app{max-width:720px;margin:auto;padding:10px 10px 80px}
+.px{image-rendering:pixelated;vertical-align:middle}
+h1,h3,button{font-family:'Press Start 2P',monospace}h1{font-size:18px;line-height:1.5}h3{font-size:12px}
+.card{background:#fffaf3;border:3px solid #5a3a3a;box-shadow:4px 4px 0 #f4b6c2;padding:10px;margin:10px 0}
+.hint{background:#fff3c4}
+button{font-size:10px;line-height:1.4;background:#e8576f;color:#fff;border:3px solid #5a3a3a;border-radius:0;box-shadow:0 4px 0 #5a3a3a;padding:8px 10px;margin:4px;cursor:pointer}
+button:active{transform:translateY(3px);box-shadow:0 1px 0 #5a3a3a}
+button:disabled{opacity:.4}button.alt{background:#b9a3e3}button.sage{background:#8fb996}
+input{font:inherit;padding:8px;margin:4px 0;border:3px solid #5a3a3a;border-radius:0;width:100%;background:#fff}
+.tabs{position:fixed;bottom:0;left:0;right:0;z-index:5;display:flex;justify-content:center;flex-wrap:wrap;background:#fffaf3;border-top:3px solid #5a3a3a;padding:2px}
+.tabs button{font-size:9px;padding:8px 7px;margin:3px 2px}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.cust{flex:1 1 130px;text-align:center;cursor:pointer;background:#fde4ea;border:3px solid #5a3a3a;padding:8px}
+.cust.ready{outline:4px solid #8fb996;animation:pop .6s infinite alternate}@keyframes pop{to{transform:scale(1.04)}}
+.bar{height:10px;background:#8fb996;border:2px solid #5a3a3a;margin-top:4px}
+.scene{position:relative;height:190px;border:3px solid #5a3a3a;overflow:hidden;
+ background:linear-gradient(#0000 0 68%,#5a3a3a 68% 70%,#d9a066 70% 100%),repeating-linear-gradient(90deg,var(--w1,#f9c9d4) 0 24px,var(--w2,#f4b6c2) 24px 48px)}
+.scene:after{content:'';position:absolute;left:0;right:0;bottom:0;height:30%;background:repeating-linear-gradient(90deg,#0000 0 40px,#8b5a3c55 40px 42px);pointer-events:none}
+.dc{position:absolute;bottom:55px;z-index:1}.dc img{filter:drop-shadow(2px 2px 0 #0003)}
+.cat{position:absolute;bottom:4px;z-index:2;cursor:pointer;animation:w 9s steps(30) infinite alternate}@keyframes w{from{left:4%}to{left:80%}}
+.hr{position:absolute;animation:f 3s steps(6) infinite;opacity:.8}.h1{top:14px;left:20%}.h2{top:30px;right:15%;animation-delay:1s}@keyframes f{50%{transform:translateY(-8px)}}
+.tiny{position:absolute;left:2px;top:2px;font-size:6px;background:none;border:0;box-shadow:none;color:#5a3a3a55;padding:2px;margin:0}
+#modal{position:fixed;inset:0;background:#0007;display:flex;align-items:center;justify-content:center;padding:20px;z-index:9}
+#modal[hidden]{display:none}#modal div{background:#fffaf3;border:3px solid #5a3a3a;box-shadow:6px 6px 0 #f4b6c2;padding:20px;max-width:420px;white-space:pre-wrap}
+#toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#5a3a3a;color:#fff;padding:6px 14px;opacity:0;transition:.3s;pointer-events:none;z-index:9}
+.cust.vip{background:#fff3c4;border-color:#d4a017}
+.pop{position:fixed;z-index:20;font-family:'Press Start 2P',monospace;font-size:12px;color:#e8576f;text-shadow:2px 2px 0 #fff;pointer-events:none;animation:pu .9s steps(8) forwards}@keyframes pu{to{transform:translateY(-50px);opacity:0}}
+.star{position:absolute;top:30px;z-index:3;cursor:pointer;animation:f 1s steps(4) infinite}
+.cust.hurry{background:#ffc9c0;animation:shk .3s infinite}@keyframes shk{50%{transform:translateX(3px)}}
+
+/* mobile */
+html{-webkit-text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;touch-action:manipulation;overscroll-behavior:none}
+input{-webkit-user-select:text;user-select:text;font-size:16px}
+button{min-height:44px}
+#app{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+.tabs{padding-bottom:env(safe-area-inset-bottom);flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start}
+.tabs button{flex:0 0 auto}
+#toast{bottom:calc(96px + env(safe-area-inset-bottom));max-width:90vw;text-align:center}
+#modal div{max-height:80vh;overflow:auto}
+@media(min-width:700px){.tabs{justify-content:center}}
+@media(max-width:480px){body{font-size:18px}h1{font-size:14px}.scene{height:150px}.cust{flex:1 1 44%}.dc img{width:34px;height:34px}.cat img{width:42px;height:42px}.card{padding:8px}}
